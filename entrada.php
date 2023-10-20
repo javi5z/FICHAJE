@@ -26,11 +26,14 @@ if ($_SESSION['usuario'] == null || $_SESSION['usuario'] == ''){
         <br>
         <?php
           date_default_timezone_set("Europe/Madrid");
-          $fecha=date("d/m/y H:i");
+          $fecha_mostrar=date("d/m/Y H:i");
+          $fecha=date("d/m/Y");
           $hora=date("H:i");
         ?>
         <div name="fechaEntrada" id="contenedor">
-          <input name="fechaEntrada" type="text" class="entrada" readonly value="<?php echo $fecha ?>"/>
+          <input name="fechaMostrar" type="text" class="entrada" readonly value="<?php echo $fecha_mostrar ?>"/>
+          <input name="fechaEntrada" type="text" class="entrada" readonly value="<?php echo $fecha ?>" style="display: none;"/>
+          <input type="text" readonly value="<?php echo $hora ?>" name="hora" class="entrada" style="display: none;">
         </div>
         <br>
         <label>Obra</label>

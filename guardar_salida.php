@@ -8,13 +8,14 @@ if ($_SESSION['usuario'] == null || $_SESSION['usuario'] == ''){
 };
 
 $usuario = $_SESSION['usuario'];
-$h_salida = $_POST['fechaSalida'];
+$f_salida = $_POST['fechaSalida'];
 $obra = $_POST['obra'];
+$hora = $_POST['hora'];
 
 date_default_timezone_set("Europe/Madrid");
 $fecha=date("d/m/y");
 
-$query = "SELECT * FROM Salidas WHERE usuario = '$usuario' and hora_salida > '$fecha'";
+$query = "SELECT * FROM Salidas WHERE usuario = '$usuario' and fecha_salida <> '$fecha'";
 
 $query = mysqli_query($conectar,$query);
 
@@ -22,7 +23,7 @@ $nr = mysqli_num_rows($query);
 
 if($nr == 0){
 
-    $insertar = "INSERT INTO Salidas VALUES('$usuario','$h_salida','$obra')";
+    $insertar = "INSERT INTO Salidas VALUES('$usuario','$f_salida','$obra','$hora')";
 
     $query = mysqli_query($conectar,$insertar);
 

@@ -39,7 +39,7 @@ if ($_SESSION['usuario'] == 'LAURA') {
     <input type="submit" value="SALIDA" class="btn" name="salida">
     <br>
     <br>
-    <input type="submit" value="GENERAR EXCEL"style="display:<?php echo $oculto ?>" class="btn" name="excel">
+    <input type="submit" value="GENERAR EXCEL"style="display:<?php echo $oculto ?>" class="btn" name="fechas">
 </form>
 </body>
 
